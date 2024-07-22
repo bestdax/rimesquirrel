@@ -1,0 +1,81 @@
+---
+name: wubi86_user
+version: "2019-08-06"
+last_edit_time: "2019-08-06"
+
+sort: original
+# 码表的排序方式
+  # by_weight 权重
+  # original 原始顺序
+columns:
+  - text
+  - code
+  - weight
+  - stem
+encoder:
+  exclude_patterns:
+    - '^z.*$'
+  rules:
+    - length_equal: 2
+      formula: "AaAbBaBb"
+    - length_equal: 3
+      formula: "AaBaCaCb"
+    - length_in_range: [4, 10]
+      formula: "AaBaCaZa"
+...
+
+# ----- 码表开始 -----
+# 格式：字词 键码  权重 （中间是tab，不是空格）
+# '#'开头的只是注释，所以可以随便分类了
+# 注释只能另起一行写，不能在词条后面写
+
+AI	ai
+APP	app
+AirPods	airpods
+AirPods Pro	airpods
+Apple	appl
+C++	cxx
+CAD	cad
+CMake	cmake
+CPP	cpp
+ChatGPT	chatgpt
+Chrome	chrome
+EMS	ems
+Excel	excel
+Firefox	firefox
+Git	git
+GitHub	github
+Google	google
+KFC	kfc
+LaTeX	latex
+MP3	mp
+Mac	mac
+Macbook	mac
+MacbookPro	mbp
+NMD	nmd
+NumPy	numpy
+Numbers	numbers
+OK	ok
+PDF	pdf
+Photoshop	phot
+Python	python
+QQ	qq
+RMB	rmb
+Safari	safari
+TMD	tmd
+USB	usb
+USD	usd
+U盘	utel
+VIP	vip
+VPN	vpn
+Vim	vim
+Windows	windows
+Word	word
+YAML	yaml
+iBooks	ibooks
+iCloud	icloud
+iOS	ios
+iPad	ipad
+iPhone	ipho
+iPod	ipod
+macOS	mac
