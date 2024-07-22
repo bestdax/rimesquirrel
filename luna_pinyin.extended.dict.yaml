@@ -1,0 +1,17 @@
+# Rime dictionary
+# encoding: utf-8
+#
+# Luna Pinyin - 明月拼音
+#
+
+---
+name: luna_pinyin.extended
+version: "2023.03.08"
+sort: by_weight
+use_preset_vocabulary: true
+import_tables:
+  - luna_pinyin
+  - luna_pinyin.sougou
+...
+
+

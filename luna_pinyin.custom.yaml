@@ -1,0 +1,26 @@
+patch:
+  translator:
+    dictionary: luna_pinyin.extended
+  switches:
+    - name: ascii_mode
+      reset: 0
+      states: ["中文", "西文"]
+    - name: full_shape
+      states: ["半角", "全角"]
+    - name: simplification
+      states: [ 漢字, 汉字 ]
+      reset: 1
+    - name: ascii_punct
+      states: ["。，", "．，"]
+    - name: extended_charset
+      states: [ "常用", "增廣" ]
+    - name: show_emoji
+      reset: 1
+      # states: [ "🈚️️\uFE0E", "🈶️️\uFE0F" ]
+      states: [ "🈚️️", "🈶️️" ]
+ 
+  simplifier/opencc_config: t2s.json
+
+  engine/filters:
+    - simplifier
+    - uniquifier

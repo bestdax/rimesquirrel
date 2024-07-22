@@ -1,0 +1,61 @@
+patch:
+  # "switches/@0/reset": 0  # 0默认为中文1为英文
+  switches:
+    - name: ascii_mode
+      reset: 0
+      states: ["中文", "西文"]
+    - name: full_shape
+      states: ["半角", "全角"]
+    - name: simplification
+      reset: 0
+      states: ["汉字", "漢字"]
+    - name: ascii_punct
+      states: ["。，", "．，"]
+    - name: extended_charset
+      states: [ "常用", "增廣" ]
+    - name: show_emoji
+      reset: 1
+      # states: [ "🈚️️\uFE0E", "🈶️️\uFE0F" ]
+      states: [ "🈚️️", "🈶️️" ]
+
+  emoji_conversion:
+    opencc_config: emoji.json
+    option_name: show_emoji
+    tags: abc
+
+  simplifier/opencc_config: s2t.json
+
+  engine/filters:
+    - simplifier
+    - uniquifier
+
+  "engine/translators/@before 0": history_translator@history
+  history:
+    input: z
+    size: 4
+    initial_quality: 1
+  "translator/dictionary": wubi86.extended #加载五笔词库
+  "punctuator/import_preset": symbols
+  punctuator:
+    half_shape:
+      '[': '['
+      ']': ']'
+      '(': '('
+      ')': ')'
+  "recognizer/patterns/custom": "^[RCDFWNS].*$"
+
+  key_binder:
+    bindings:
+      #     - {accept: comma, send: 2, when: has_menu} #候选2 用逗号选择 （修改的时候不要多加或少加空格，跟前面的对齐就好了）
+      #     - {accept: period, send: 3, when: has_menu} #候选3 用句号选择
+      - {accept: semicolon, send: 2, when: has_menu} #候选2 用分号
+      - {accept: apostrophe, send: 3, when: has_menu} #候选3 用单引号
+      - {accept: bracketleft, send: apostrophe, when: composing} #候选3 用单引号
+
+__patch:
+# Rx: emoji:customize:schema=wubi86 {
+  - patch/+:
+      __include: emoji_suggestion:/patch
+      __include: easy_en:/patch
+
+# }

@@ -1,0 +1,13 @@
+patch:
+  easy_en/use_wordninja_rs_lua_module: true
+  easy_en/wordninja_rs_lua_module_path: "/opt/homebrew/lib/lua/5.4/wordninja.so"
+  translator/enable_user_dict: true
+
+
+  key_binder:
+    bindings:
+      #     - {accept: comma, send: 2, when: has_menu} #候选2 用逗号选择 （修改的时候不要多加或少加空格，跟前面的对齐就好了）
+      #     - {accept: period, send: 3, when: has_menu} #候选3 用句号选择
+      - {accept: semicolon, send: 2, when: has_menu} #候选2 用分号
+      - {accept: apostrophe, send: 3, when: has_menu} #候选3 用单引号
+      - {accept: bracketleft, send: apostrophe, when: composing} #候选3 用单引号
