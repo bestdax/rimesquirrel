@@ -13,22 +13,56 @@ RIME是一个很难上手的输入法，但是一旦配置完成，就可以放�
 ### 特性
 主力输入法是五笔，所以基本上置备都是在这个上面。以下是一些主要的功能：
 - 中英文混输
+
+![mixtyping](imgs/mixtyping.png)
+
 - 按z键用拼音反查五笔编码
+
+![reverse](imgs/reverse.png)
+
 - 自动造词
+
 - 键入`/`开始符号输入模式，具体的符号代码可以查阅`symbols.yaml`
+
+![symbols](imgs/symbols.png)
+
 - 键入`time`输入时间
+
+![time](imgs/time.png)
+
 - 键入`date`输入日期
+
+![date](imgs/date.png)
+
 - 键入`week`输入日期+星期
+
+![week](imgs/week.png)
+
+- 键入`dttm`输入日期时间的字符串，有时候命名文件的时候会用到
+
+![datetime](imgs/datetime.png)
+
 - 键入`N`然后输入数字输出大写数字
+
+![zhnumber](imgs/zhnumber.png)
+
 - 键入`R`然后字符和数字进行字符乘法，比如`R-5`或者`R5-`都会输出`-----`
+
+![strmulti](imgs/strmulti.png)
+
 - 键入`F`然后输入会调用`figlet`来输出字符画，比如`FRIME`会输出：
-![figlet](https://github.com/bestdax/rimesquirrel/raw/main/imgs/figlet.png)
+
+![figlet](imgs/figlet.png)
 
 不过这个需要在等宽字体的情况下才能正常显示，所以几乎也没有什么鸟用。
 - 键入D然后输入日期，比如`D2019-01-01`会输出`2019年1月1日`，设计这个主要是因为用五笔输入月和日都要按好几下才能出来。
-- 键入C开始计算器模式，比如键入`C35*7`会出来`35*7=215`和`215`这两个选项。
+![date2](imgs/date2.png)
+- 键入C开始计算器模式，比如键入`C35*7`会出来`35*7=245`和`245`这两个选项。
+![calculator](imgs/calculator.png)
 - 键入W开启微信表情输入模式，这个可能是用lua自定义的功能里面用得最多的了。
 以下是表情与符号的对照表，基本上是拼音首字母的缩写，有重复的时候会进行一些区别。可以加上数字来控制表情输出的个数，如果不输入表情代码，会随机选择。比如`W5`会输出`[瓢虫][凋谢][社会社会][咖啡][合十]`。这个聊天的时候挺常用。
+![wemoji1](imgs/wemoji1.png)
+![wemoji2](imgs/wemoji2.png)
 
 | 表情 | 含义 | 表情 | 含义 | 表情 | 含义 |
 | --- | --- | --- | --- | --- | --- |
